@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Rekise Marine Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is created with React and Open Layers.
 
-## Available Scripts
+## Components
 
-In the project directory, you can run:
+Drawing Linestrings
+Drawing Polygons
+Modals
+Tables
 
-### `npm start`
+### Walkthrough
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Click on the link to visit the deployed website.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The opening screen looks like this:
 
-### `npm test`
+![image](https://github.com/user-attachments/assets/775eca1b-d94d-4244-a430-3d5fe3d1de83)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Next, the user needs to click on Draw to start the interaction. A modal window then opens, providing the option to Generate Data and draw Linestrings.
 
-### `npm run build`
+![image](https://github.com/user-attachments/assets/365538d3-a26b-4a72-b42e-1a20a7519847)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+On selecting the Generate data button, the user can draw line strings on the map.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://github.com/user-attachments/assets/4513ae00-3f0f-40c2-b1d5-1801f28c84b9)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Users can make multiple lines through it. If the current interaction needs to be discarded users can click the "Esc" button else if the users want to record the current interaction they can press "Enter" which would stop further line creations and show the Draw button again.
 
-### `npm run eject`
+![image](https://github.com/user-attachments/assets/18c429c3-54a2-4cea-8778-f8593f51f924)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Now, when clicking the Draw button, users can see that the coordinates for the Linestrings have been recorded and stored in a table.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](https://github.com/user-attachments/assets/282ab5f8-840c-4794-9d6f-eb0687b0ef9e)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Users can select the three-dot option in the Actions column to create a Polygon associated with the selected Linestring waypoint. There are two options and anyone can be selected.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![image](https://github.com/user-attachments/assets/b60c7f4c-b22c-41d2-96c2-9c36c12c03db)
 
-## Learn More
+Upon selecting it a new modal shows up which is the Polygon tool modal. 
+There are three options here:
+- Mission Planner button: Takes you to the previous modal (Mission Creation).
+- Discard button: Discards the creation of Polygon and returns you to the Main screen.
+- Import Points button: On clicking this, the user gets equipped to interact with the map again but this time the user may draw polygons.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![image](https://github.com/user-attachments/assets/2dcad398-bdaf-4d2f-ba05-abe7589a4cf0)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![image](https://github.com/user-attachments/assets/daf7c3bf-55e3-453f-922c-b125ae2e0df9)
 
-### Code Splitting
+This tool has the same functionality as the Linestring where you can press "Esc" to end the interaction or press "Enter" to record the interaction.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+After pressing "Enter" we need to navigate back to the Draw button -> Select the waypoint we used to create a Polygon (We can see that the points that have associated Polygons to it have a name change on the coordinates column).
 
-### Analyzing the Bundle Size
+![image](https://github.com/user-attachments/assets/a351c9c1-18ca-45e1-81a9-c4f11236eb44)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+If we select the waypoint and enter the Polygon tool again we can see the recorded coordinates of the Polygon associated with the waypoint. We can add multiple polygons as well.
 
-### Making a Progressive Web App
+![image](https://github.com/user-attachments/assets/59507d3b-39e3-42ae-9c1b-5e9e73533a23)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Key Functionalities
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Press "Esc" to exit interaction.
+- Press "Enter" to collect the current interaction.
+- Custom logic for coordinate format on Polygon tool.
+- Logic to record polygons and associate them to the waypoints.
+- Multiple coordinates can be recorded.
+- Custom hook to adjust map according to screen size.
+- Other optimizations included as well for rendering, cleanups, etc.
+- Navigation between modals and buttons and logic for their existence.
+- Applied React best practices along with proper file structuring as well.
+- Usage of the testing library (Jest) for writing unit test cases.
